@@ -1,0 +1,21 @@
+ul {
+	 list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	}
+	
+H1 {color:blue; font-size:80px; background-color:green;}
+h2 {color:blue; font-size:40px;ALIGN=right}
+h3 {color:blue; font-size:50px;ALIGN=right}
+
+
+body {
+  background-image: url("superstore.jpg");
+  background-color: #cccccc;
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+		
+	
