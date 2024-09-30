@@ -1,26 +1,31 @@
 <?php
-// database connection code
-// $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
+phpinfo();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// Database connection code
+$con = mysqli_connect('localhost', 'root', '', 'tbc');
 
-$con = mysqli_connect('localhost', 'root', '','tbc');
-
-// get the post records
-$lastName = $_POST['lastName'];
-$firstName= $_POST['firstName'];
-//$email = $_POST['email'];
-//$custphone = $_POST['custphone'];
-//$custaddress = $_POST['custaddress'];
-//$custmessage = $_POST['custmessage'];
-
-// database insert SQL code
-$sql = "INSERT INTO customers (lastname,firstName) VALUES ('$lastName','$firstName')";
-
-// insert in database 
-$rs = mysqli_query($con, $sql);
-
-if($rs)
-{
-	echo "Contact Records Inserted";
+// Check connection
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-?>
 
+// Prepare and bind
+$stmt = $con->prepare("INSERT INTO customers (lastname, firstName) VALUES (?, ?)");
+$stmt->bind_param("ss", $lastName, $firstName);
+
+// Get the post records
+$lastName = $_POST['lastName'];
+$firstName = $_POST['firstName'];
+
+// Execute the statement
+if ($stmt->execute()) {
+    echo "Contact Records Inserted";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+// Close the statement and connection
+$stmt->close();
+$con->close();
+?>
