@@ -5,8 +5,13 @@ ul {
 	}
 	
 H1 {color:blue; font-size:80px; background-color:green;}
+<<<<<<< HEAD
 h2 {color:blue; font-size:40px;ALIGN:right}
 h3 {color:blue; font-size:50px;ALIGN:right}
+=======
+h2 {color:blue; font-size:40px; text-align :right;}
+h3 {color:blue; font-size:50px; text-align :right;}
+>>>>>>> 116201d51c389a6b1a789756721398be23c38411
 
 
 body {
