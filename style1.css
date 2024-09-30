@@ -5,8 +5,8 @@ ul {
 	}
 	
 H1 {color:blue; font-size:80px; background-color:green;}
-h2 {color:blue; font-size:40px;ALIGN=right}
-h3 {color:blue; font-size:50px;ALIGN=right}
+h2 {color:blue; font-size:40px;ALIGN:right}
+h3 {color:blue; font-size:50px;ALIGN:right}
 
 
 body {
